@@ -1,0 +1,1 @@
+// For blog posts (including relations to the user)
