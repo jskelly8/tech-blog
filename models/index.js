@@ -4,10 +4,6 @@ const Post = require("./post");
 const Comment = require("./comment");
 
 // Model relationships
-// User.hasMany(Project, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-//   });
 User.hasMany(Post, {
     foreignKey: 'user_id',
 });
