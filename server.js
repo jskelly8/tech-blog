@@ -18,6 +18,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 // Routes
 app.use(routes);

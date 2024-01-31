@@ -3,9 +3,8 @@
 // Imports
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
-const { underscoredIf } = require('sequelize/types/utils');
 
-class Post extends Model {} // ?? Needed ??
+class Post extends Model {} 
 
 Post.init(
     {
@@ -33,7 +32,7 @@ Post.init(
         created_at: {
             type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: Sequelize.NOW
+            defaultValue: DataTypes.NOW
         }
     },
     {

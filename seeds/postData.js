@@ -6,10 +6,8 @@ const posts = [
   {
     user_id: 1,
     title: 'My First Blog Post',
-    content: 'This is the content of my first blog post.',
-    createdAt: new Date(),
+    content: 'This is the content of my first blog post.'
   },
-  // Add more post objects as needed
 ];
 
 // Function to seed data

@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
             include: [{ model: User, attributes: ['name'] }]
         });
         const posts = postData.map((post) => post.get({ plain: true }));
-        res.render('homepage', { posts });
+        res.render('homepage', { title: 'Home Page', posts, loggedIn: req.session.logged_in });
     } catch (error) {
         res.status(500).json(error);
     }
@@ -20,11 +20,11 @@ router.get('/', async (req, res) => {
 // Login Route -- Renders the login view. Redirects to the dashboard if the user is already logged in.
 router.get('/login', (req, res) => {
     try {
-        if (req.session.loggedIn) {
+        if (req.session.logged_in) {
             res.redirect('/dashboard');
             return;
         };
-        res.render('login');
+        res.render('login', { title: 'Login', loggedIn: req.session.logged_in });
     } catch (error) {
         res.status(500).json(error);
     }
@@ -33,11 +33,11 @@ router.get('/login', (req, res) => {
 // Signup Route -- Renders the signup view.
 router.get('/signup', (req, res) => {
     try {
-        if (req.session.loggedIn) {
+        if (req.session.logged_in) {
             res.redirect('/dashboard');
             return;
         };
-        res.render('signup');
+        res.render('signup', { title: 'SignUp', loggedIn: req.session.logged_in });
     } catch (error) {
         res.status(500).json(error);
     }
@@ -53,7 +53,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
             include: [{ model: User, attributes: ['name'] }]
         });
         const posts = userPost.map((post) => post.get({ plain: true }));
-        res.render('dashboard', { posts });
+        res.render('dashboard', { title: 'Dashboard', posts, loggedIn: req.session.logged_in });
     } catch (error) {
         res.status(500).json(error);
     }
@@ -70,9 +70,9 @@ router.get('/post/:id', async (req, res) => {
         });
         if (postData) {
             const posts = postData.get({ plain: true });
-            res.render('post', { ...posts });
+            res.render('post', {title: 'Blog Post', ...posts, loggedIn: req.session.logged_in });
         } else {
-            res.status(404).end();
+            res.status(404).json({ message: 'Post not found.'});
         };
     } catch (error) {
         res.status(500).json(error);
@@ -80,13 +80,9 @@ router.get('/post/:id', async (req, res) => {
 });
 
 // Add-new post Route -- Renders a view to create a new blog post, restricted to authenticated users.
-router.get('/newpost', (req, res) => {
+router.get('/newpost', withAuth, (req, res) => {
     try {
-        if (req.session.loggedIn) {
-            res.render('newpost');
-            return;
-        };
-        res.redirect('login');
+            res.render('newpost', { title: 'New Post', loggedIn: req.session.logged_in });
     } catch (error) {
         res.status(500).json(error);
     }
@@ -103,9 +99,9 @@ router.get('/editpost/:id', async (req, res) => {
         });
         if (postData) {
             const posts = postData.get({ plain: true });
-            res.render('post', { ...posts });
+            res.render('post', { title: 'Update Post', ...posts, loggedIn: req.session.logged_in });
         } else {
-            res.status(404).end();
+            res.status(404).json({ message: 'Post not found.' });
         };
     } catch (error) {
         res.status(500).json(error);

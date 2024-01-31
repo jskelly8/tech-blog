@@ -4,7 +4,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}; // ?? Needed ??
+class Comment extends Model {}; 
 
 Comment.init(
     {
@@ -37,7 +37,7 @@ Comment.init(
         created_at: {
             type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: Sequelize.NOW
+            defaultValue: DataTypes.NOW
         }
     },
     {

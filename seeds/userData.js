@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 // Data Array
 const users = [
   {
-    username: 'johndoe',
+    name: 'johndoe',
     email: 'johndoe@example.com',
     password: bcrypt.hashSync('password123', 10)
   },
