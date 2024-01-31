@@ -1,14 +1,20 @@
-<div id="heroBanner">
-    <img src="/images/41203a.jpg" class="img-fluid" alt="Colorful Keyboard-like-keys">
-</div>
-
-
-{{#each posts as |post|}}
-<div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header">Created by {{post.user.name}}</div>
-    <div class="card-body">
-        <h5 class="card-title">{{post.title}}</h5>
-        <p class="card-text">{{ post.content }}</p>
+<main>
+    <div id="heroBanner">
+        <img src="/images/41203a.jpg" class="img-fluid" alt="Colorful Keyboard-like-keys">
     </div>
-</div>
-{{/each}}
+
+    <div class="row grid gap-5 d-flex justify-content-center">
+        {{#each posts as |post|}}
+        <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Created by {{post.user.name}}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.content}}</p>
+                {{!-- <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{post.created_at}}</li> --}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</main>
