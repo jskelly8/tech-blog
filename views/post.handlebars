@@ -1,1 +1,33 @@
-<h1> {{ title }} </h1>
+<main style="margin: 12vh">
+    <h1> {{title}} </h1>
+    <p>Created by: {{user.name}}</p>
+
+    <div style="margin: 12vh">
+        {{content}}
+    </div>
+
+    <div>
+        {{#if logged_in}}
+            <form id="commentForm">
+                <div class="mb-3">
+                    <label for="postComment" class="form-label">Comment: </label>
+                    <textarea class="form-control" id="postComment" rows="3" placeholder="Comment . . ."></textarea>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </div>
+            </form>
+        {{/if}}
+    </div>
+
+    <div style="">
+        <h4>Comments:</h4>
+        {{#each comments as |comment|}}
+            <div>
+                <p>{{user.name}}: {{comment.content}}</p>
+                {{!-- <p>date??</p> --}}
+            </div>
+        {{/each}}
+    </div>
+    
+</main>

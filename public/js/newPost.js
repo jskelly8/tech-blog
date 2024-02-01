@@ -20,7 +20,7 @@ const newPostFormHandler = async (event) => {
     };
 };
 
-// Event Listener for 'Register' button
+// Event Listener for 'Post' button
 document
     .querySelector('#newPost')
     .addEventListener('submit', newPostFormHandler);
