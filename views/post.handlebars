@@ -25,7 +25,7 @@
         {{#each comments as |comment|}}
             <div>
                 <p>{{user.name}}: {{comment.content}}</p>
-                {{!-- <p>date??</p> --}}
+                {{!-- <p>{{format_date post.created_at}}</p> --}}
             </div>
         {{/each}}
     </div>
