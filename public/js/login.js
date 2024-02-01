@@ -1,5 +1,5 @@
 // Login functionality
-const formHandler = async (event) => {
+const logInFormHandler = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('#name').value.trim();
@@ -7,7 +7,7 @@ const formHandler = async (event) => {
 
     if (name && password) {
         const response = await fetch('/api/users/login', {
-            method: POST, // ERROR HERE ---------------------------------
+            method: 'POST', 
             body: JSON.stringify({ name, password }),
             headers: { 'Content-type': 'application/json' }
         });
@@ -23,4 +23,4 @@ const formHandler = async (event) => {
 // Event Listener for 'Login' button
 document
     .querySelector('#login')
-    .addEventListener('submit', formHandler);
+    .addEventListener('submit', logInFormHandler);

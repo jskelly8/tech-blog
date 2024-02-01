@@ -18,16 +18,16 @@ router.get('/', async (req, res) => {
 // New User SignUp Route --- Creates a new user with the provided credentials. Passwords are hashed before storing in the database. The user is also logged in immediately after signing up.
 router.post('/signup', async (req, res) => {
     try {
-        const newUser = await User.create(req.body);
+        const createdUser = await User.create(req.body);
         req.session.save(() => {
-            req.session.user_id = new user_id;
+            req.session.user_id = createdUser.id;
             req.session.logged_in = true;
-            res.status(200).json(newUser);
+            res.status(200).json(createdUser);
         });
     } catch (error) {
         res.status(500).json(error);
     }
-})
+});
 
 // Login Existing User Route -- Authenticates a user by checking the provided email and password. 
 router.post('/login', async (req, res) => {
@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
         };
 
         req.session.save(() => {
-            req.session.user_id = user_id;
+            req.session.user_id = user.id;
             req.session.logged_in = true;
             res.json({ user, message: 'Logged In' });
         });
