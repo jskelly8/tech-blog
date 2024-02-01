@@ -1,11 +1,35 @@
 <main style="margin: 12vh">
-    <h1> {{ title }} </h1>
-
-    <div>
-        {{!-- create new button --}}
+    <div id="heroBanner">
+        <img src="/images/41203a.jpg" class="img-fluid" alt="Colorful Keyboard-like-keys">
     </div>
 
-    <div>
-        {{!-- user posted posts --}}
+    <h1> {{ title }} </h1>
+
+    <div class="d-flex justify-content-center">
+        {{!-- create new button --}}
+        <a href="/newpost" class="btn btn-primary mb-3">Create a New Post</a>
+    </div>
+
+    {{!-- user posted posts --}}
+    <div class="row grid gap-5 d-flex justify-content-center">
+        {{#each posts as |post|}}
+        <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Created by {{post.user.name}}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.content}}</p>
+                {{!-- <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{post.created_at}}</li> --}}
+            </div>
+            <div class="d-flex justify-content-center mb-2">
+                <a href="/post/{{id}}" class="text-dark">Full Post</a>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-between mb-2">
+                <a href="/editpost/{{id}}" class="btn btn-outline-light btn-sm">Edit Post</a>
+                <button class="btn btn-danger delete-post btn-sm" data-post-id="{{id}}">Delete</button>
+            </div>
+            
+        </div>
+        {{/each}}
     </div>
 </main>

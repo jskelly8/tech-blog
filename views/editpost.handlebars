@@ -1,0 +1,19 @@
+<main style="margin: 12vh">
+    <h3>Edit Your Post</h3>
+    
+    <form id="editPost">
+        <div class="mb-3">
+            <label for="editPostTitle" class="form-label">Title: </label>
+            <input type="text" class="form-control" id="editPostTitle" placeholder="Title of Post" value="{{post.title}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="editPostContent" class="form-label">Content: </label>
+            <textarea class="form-control" id="editPostContent" rows="6" placeholder="Blog Content . . .">{{post.content}}</textarea>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Update Post</button>
+        </div>
+    </form>
+</main>
