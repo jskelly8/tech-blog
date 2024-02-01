@@ -22,11 +22,11 @@
                     <li class="list-group-item">{{post.created_at}}</li> --}}
             </div>
             <div class="d-flex justify-content-center mb-2">
-                <a href="/post/{{id}}" class="text-dark">Full Post</a>
+                <a href="/post/{{post.id}}" class="text-dark">Full Post</a>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-between mb-2">
-                <a href="/editpost/{{id}}" class="btn btn-outline-light btn-sm">Edit Post</a>
-                <button class="btn btn-danger deletePost btn-sm" data-post-id="{{id}}">Delete</button>
+                <a href="/editpost/{{post.id}}" class="btn btn-outline-light btn-sm">Edit Post</a>
+                <button class="btn btn-danger deletePost btn-sm" data-post-id="{{post.id}}">Delete</button>
             </div>
             
         </div>

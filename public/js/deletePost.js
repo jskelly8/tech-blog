@@ -1,6 +1,6 @@
 // Delete Post Functionality 
 const deletePost = async (post_id) => {
-    const response = await fetch('/api/posts/${post_id}', {
+    const response = await fetch(`/api/posts/${post_id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     });

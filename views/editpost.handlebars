@@ -2,6 +2,8 @@
     <h3>Edit Your Post</h3>
     
     <form id="editPost">
+        <!-- Hidden input for post ID -->
+        {{!-- <input type="hidden" id="editPostId" value="{{post.id}}"> --}}
         <div class="mb-3">
             <label for="editPostTitle" class="form-label">Title: </label>
             <input type="text" class="form-control" id="editPostTitle" placeholder="Title of Post" value="{{post.title}}">
