@@ -6,12 +6,12 @@
         {{!-- <input type="hidden" id="editPostId" value="{{post.id}}"> --}}
         <div class="mb-3">
             <label for="editPostTitle" class="form-label">Title: </label>
-            <input type="text" class="form-control" id="editPostTitle" placeholder="Title of Post" value="{{post.title}}">
+            <input type="text" class="form-control" id="editPostTitle" placeholder={{title}}>
         </div>
 
         <div class="mb-3">
             <label for="editPostContent" class="form-label">Content: </label>
-            <textarea class="form-control" id="editPostContent" rows="6" placeholder="Blog Content . . .">{{post.content}}</textarea>
+            <textarea class="form-control" id="editPostContent" rows="6" placeholder="Blog Content . . .">{{content}}</textarea>
         </div>
 
         <div class="d-flex justify-content-center">
@@ -19,3 +19,4 @@
         </div>
     </form>
 </main>
+<script src="/js/editPost.js"></script>

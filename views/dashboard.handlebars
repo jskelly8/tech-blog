@@ -18,7 +18,6 @@
             <div class="card-body">
                 <h5 class="card-title">{{post.title}}</h5>
                 <p class="card-text">{{post.content}}</p>
-                {{!-- <p class="card-text">{{format_date post.created_at}}</p> --}}
             </div>
             <div class="d-flex justify-content-center mb-2">
                 <a href="/post/{{post.id}}" class="text-dark">Full Post</a>
@@ -32,3 +31,5 @@
         {{/each}}
     </div>
 </main>
+<script src="/js/logout.js"></script>
+<script src="/js/deletePost.js"></script>

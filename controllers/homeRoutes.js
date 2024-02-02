@@ -99,7 +99,7 @@ router.get('/editpost/:id', async (req, res) => {
         });
         if (postData) {
             const posts = postData.get({ plain: true });
-            res.render('post', { title: 'Update Post', ...posts, loggedIn: req.session.logged_in });
+            res.render('editpost', { title: 'Update Post', ...posts, loggedIn: req.session.logged_in });
         } else {
             res.status(404).json({ message: 'Post not found.' });
         };

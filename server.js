@@ -4,6 +4,7 @@ const session = require('express-session');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,6 +21,8 @@ app.use(session({
 }));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+const hbs = exphbs.create({ helpers });
+app.engine('handlebars', hbs.engine);
 
 // Routes
 app.use(routes);

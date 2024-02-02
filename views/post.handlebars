@@ -1,6 +1,6 @@
 <main class="mobile" style="margin: 12vh">
     <h1> {{title}} </h1>
-    <p>Created by: {{user.name}}</p>
+    <p>Created by: {{user.name}}, on: {{format_date created_at}}</p>
 
     <div class="mobile" style="margin: 12vh">
         {{content}}
@@ -24,10 +24,9 @@
         <h4>Comments:</h4>
         {{#each comments as |comment|}}
             <div>
-                <p>{{user.name}}: {{comment.content}}</p>
-                {{!-- <p>{{format_date post.created_at}}</p> --}}
+                <p>{{comment.content}}<br>Commented by: {{user.name}}, on: {{format_date created_at}}</p>
             </div>
         {{/each}}
     </div>
-    
 </main>
+<script src="/js/newComment.js"></script>
