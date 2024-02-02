@@ -28,7 +28,7 @@ In order to test the program, please use `npm i` in order to install the require
 ## Usage
 
 To visit the deployed application, use the following link:
-<!-- Heroku link -->
+https://tech-blog-ch-fce07de2de9a.herokuapp.com/
 Please revisit the [Description](#description) section to review application specific features.
 
 Screenshot of deployed application:
