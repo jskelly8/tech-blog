@@ -1,8 +1,10 @@
 <main>
+    {{!-- Hero Image --}}
     <div id="heroBanner">
         <img src="/images/41203a.jpg" class="img-fluid" alt="Colorful Keyboard-like-keys">
     </div>
 
+    {{!-- user posted posts, using dynamic cards for each post --}}
     <div class="row grid gap-5 d-flex justify-content-center">
         {{#each posts as |post|}}
         <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
@@ -10,8 +12,6 @@
             <div class="card-body">
                 <h5 class="card-title">{{post.title}}</h5>
                 <p class="card-text">{{post.content}}</p>
-                {{!-- <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{post.created_at}}</li> --}}
             </div>
             <div class="d-flex justify-content-center mb-3">
                 <a href="/post/{{id}}" class="text-dark">Full Post</a>

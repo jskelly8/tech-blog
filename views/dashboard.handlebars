@@ -1,16 +1,18 @@
 <main style="margin: 12vh">
+    {{!-- Hero Image --}}
     <div id="heroBanner">
         <img src="/images/41203a.jpg" class="img-fluid" alt="Colorful Keyboard-like-keys">
     </div>
 
+    {{!-- Dynmaic page title --}}
     <h1> {{ title }} </h1>
 
     <div class="d-flex justify-content-center">
-        {{!-- create new button --}}
+        {{!-- create new post button --}}
         <a href="/newpost" class="btn btn-primary mb-3">Create a New Post</a>
     </div>
 
-    {{!-- user posted posts --}}
+    {{!-- user posted posts, using dynamic cards for each post --}}
     <div class="row grid gap-5 d-flex justify-content-center">
         {{#each posts as |post|}}
         <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
@@ -30,4 +32,5 @@
         {{/each}}
     </div>
 </main>
+{{!-- JS link --}}
 <script src="/js/deletePost.js"></script>

@@ -1,11 +1,14 @@
 <main class="mobile" style="margin: 12vh">
+    {{!-- Dynamic page title & creator name and date posted --}}
     <h1> {{title}} </h1>
     <p>Created by: {{user.name}}, on: {{format_date created_at}}</p>
 
+    {{!-- Dynamic post content --}}
     <div class="mobile" style="margin: 12vh">
         {{content}}
     </div>
 
+    {{!-- Dynamic conditional that will allow user thats logged in to post a comment on post --}}
     <div>
         {{#if loggedIn}}
             <form id="commentForm">
@@ -20,6 +23,7 @@
         {{/if}}
     </div>
 
+    {{!-- Dynamic display of comment history --}}
     <div style="">
         <h4>Comments:</h4>
         {{#each comments as |comment|}}
@@ -29,4 +33,5 @@
         {{/each}}
     </div>
 </main>
+{{!-- JS link --}}
 <script src="/js/newComment.js"></script>

@@ -5,12 +5,14 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
+// Defining a new class named User which extends Model from Sequelize
 class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     };
 };
 
+// Initializing the User model with its schema definition
 User.init(
     {
         id: {
@@ -58,4 +60,5 @@ User.init(
     }
 );
 
+// Export
 module.exports = User;

@@ -4,8 +4,10 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Defining a new class named Comment which extends Model from Sequelize
 class Comment extends Model {}; 
 
+// Initializing the Comment model with its schema definition
 Comment.init(
     {
         id: {
@@ -49,4 +51,5 @@ Comment.init(
     }
 );
 
+// Export
 module.exports = Comment;

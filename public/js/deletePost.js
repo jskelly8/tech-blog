@@ -19,5 +19,6 @@ const deletePostHandler = (event) => {
     };
 };
 
+// Event Listener for 'Delete' button
 document
     .addEventListener("click", deletePostHandler);
