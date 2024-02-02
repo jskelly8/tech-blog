@@ -1,50 +1,73 @@
 # tech-blog
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+## Description
 Challenge 14 -- Model-View-Controller (MVC) Challenge: Tech Blog
 
-AS A developer who writes about tech
-I WANT a CMS-style blog site
-SO THAT I can publish articles, blog posts, and my thoughts and opinions
+This project was designed for developers passionate about technology, my CMS-style blog site offers a comprehensive platform for publishing articles, blog posts, and personal opinions. 
 
-GIVEN a CMS-style blog site
-WHEN I visit the site for the first time
-THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option
-THEN I am taken to the homepage
-WHEN I click on any other links in the navigation
-THEN I am prompted to either sign up or sign in
-WHEN I choose to sign up
-THEN I am prompted to create a username and password
-WHEN I click on the sign-up button
-THEN my user credentials are saved and I am logged into the site
-WHEN I revisit the site at a later time and choose to sign in
-THEN I am prompted to enter my username and password
-WHEN I am signed in to the site
-THEN I see navigation links for the homepage, the dashboard, and the option to log out
-WHEN I click on the homepage option in the navigation
-THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
-WHEN I click on an existing blog post
-THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
-WHEN I enter a comment and click on the submit button while signed in
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
-WHEN I click on the dashboard option in the navigation
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
-WHEN I click on the button to add a new blog post
-THEN I am prompted to enter both a title and contents for my blog post
-WHEN I click on the button to create a new blog post
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
-WHEN I click on one of my existing posts in the dashboard
-THEN I am able to delete or update my post and taken back to an updated dashboard
-WHEN I click on the logout option in the navigation
-THEN I am signed out of the site
-WHEN I am idle on the site for more than a set time
-THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
+Upon visiting, users are greeted with a homepage that showcases existing blog posts, alongside intuitive navigation links to the homepage, dashboard, and a login option. Registration is straightforward, prompting new users to create a username and password, ensuring a seamless transition into being logged into the site. For returning users, a simple login process awaits. Once logged in, users can effortlessly navigate between the homepage, dashboard, and logout options. The homepage presents blog posts with titles and creation dates, while the dashboard offers a personal space for users to manage their posts, including options to add new entries. Engaging with the community is encouraged through commenting features on each post. Enhanced user experience is ensured through features like automatic logout after a period of inactivity, prompting users to log in again to add, update, or delete content, ensuring both security and user engagement.
 
+## Table of Contents
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Badges](#badges)
+- [Features](#features)
+- [Tests](#tests)
+- [Questions](#questions)
 
+## Installation
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
+If just visiting the site, please see the deployed application link in the [Usage](#usage) section, and then use as desired. 
 
-Your challenge this week is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+In order to test the program, please use `npm i` in order to install the required dependiencies listed in the package.json, source the database (mysql log in, `source ./db/schema.sql`), seed the database (`npm run seed`), and then `npm run start` to start a local server version. Please also update the .env.EXAMPLE file with your own credentials for MySQL and rename the file to just .env so that it will be ignored in any git push.
 
+## Usage
 
-<a href="https://www.freepik.com/free-ai-image/glowing-geometric-shapes-vibrant-colors-ly-reflect-generated-by-ai_42884570.htm#query=coding&position=35&from_view=search&track=sph&uuid=80981692-6912-4950-afa4-1dad6cd27bab">Image By vecstock</a>
+To visit the deployed application, use the following link:
+<!-- Heroku link -->
+Please revisit the [Description](#description) section to review application specific features.
+
+Screenshot of deployed application:
+[!Screenshot of tech-blog site](./public/images/techBlogClip.png)
+
+## Credits
+
+I recieved some help from my tutor, Bobbi Tarkany, whom assisted in the debugging of the back end. Please check out her work by visiting her [GitHub](https://github.com/bltarkany).
+
+Hero/Banner Photo used from free-to-use photo library site:
+@vecstock. (n.d.). Freepik. Designed by Freepik. Retrieved from https://www.freepik.com/free-ai-image/glowing-geometric-shapes-vibrant-colors-ly-reflect-generated-by-ai_42884570.htm#query=coding&position=35&from_view=search&track=sph&uuid=80981692-6912-4950-afa4-1dad6cd27bab. 
+
+## License
+
+[MIT License](https://opensource.org/licenses/MIT)
+
+## Badges
+
+![Static Badge](https://img.shields.io/badge/thank_you-for_visiting-purple)
+
+## Features
+
+For application-specific features, please revisit the [Description](#description) section
+
+* CSS & Bootstrap
+* Handlebars
+* JavaScript & JSON
+* Express 
+* Express-Handlebars
+* Express-Session
+* Node
+* MySQL
+* Sequilize
+* DotEnv
+
+## Tests
+
+You can test this back end project by using the program Insomnia & hosting a local server so that you can interact with the database thru Sequelize. I have provided necessary installation instructions for testing inside the previous [Installation](#installation) section. 
+
+## Questions
+
+If you have any questions, feel free to reach out to me via [GitHub](https://github.com/jskelly8/) or email me at jessskelton888@gmail.com.
