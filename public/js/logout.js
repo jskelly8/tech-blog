@@ -16,3 +16,25 @@ const logoutFormHandler = async () => {
 document
     .querySelector('#logout')
     .addEventListener('click', logoutFormHandler);
+
+// Timed Logout Functionality
+let logoutTimer;
+const TIMEOUT = 1 * 60 * 1000; // 10 min idle log out
+
+// Resets the logout timer
+function resetTimer() {
+    clearTimeout(logoutTimer);
+    logoutTimer = setTimeout(() => {
+        // Calls the logout function
+        logoutFormHandler();
+    }, TIMEOUT);
+}
+
+// Event listeners
+document.addEventListener('mousemove', resetTimer);
+document.addEventListener('keydown', resetTimer);
+document.addEventListener('scroll', resetTimer);
+document.addEventListener('click', resetTimer);
+
+// Initialize the timer
+resetTimer();
