@@ -32,7 +32,7 @@ https://tech-blog-ch-fce07de2de9a.herokuapp.com/
 Please revisit the [Description](#description) section to review application specific features.
 
 Screenshot of deployed application:
-[!Screenshot of tech-blog site](./public/images/techBlogClip.png)
+![Screenshot of tech-blog site](./public/images/techBlogClip.png)
 
 ## Credits
 

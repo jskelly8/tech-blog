@@ -6,12 +6,12 @@
     <form id="editPost">
         <div class="mb-3">
             <label for="editPostTitle" class="form-label">Title: </label>
-            <input type="text" class="form-control" id="editPostTitle" placeholder={{title}}>
+            <input type="text" class="form-control" id="editPostTitle" value='{{title}}'>
         </div>
 
         <div class="mb-3">
             <label for="editPostContent" class="form-label">Content: </label>
-            <textarea class="form-control" id="editPostContent" rows="6" placeholder={{content}}></textarea>
+            <textarea class="form-control" id="editPostContent" rows="6" >{{content}}</textarea>
         </div>
 
         <div class="d-flex justify-content-center">
